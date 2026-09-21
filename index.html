@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batman | Bigex Portfolio</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;background:#080808;color:#fff;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.55),rgba(0,0,0,.8)),url('assets/background.jpg') center/cover no-repeat;z-index:-2}
+body:after{content:"";position:fixed;inset:0;background:rgba(0,0,0,.18);z-index:-1}
+nav{position:fixed;top:0;left:0;right:0;z-index:10;display:flex;justify-content:space-between;align-items:center;padding:20px 7%;background:rgba(0,0,0,.35);backdrop-filter:blur(12px)}
+.logo{font-size:1.25rem;font-weight:900;letter-spacing:3px}.logo span{opacity:.55}
+nav a{color:#fff;text-decoration:none;margin-left:24px;font-size:.9rem;opacity:.8}nav a:hover{opacity:1}
+section{min-height:100vh;padding:120px 8%;display:flex;align-items:center}.hero{justify-content:center;text-align:center}
+.hero-inner{max-width:900px}.eyebrow{letter-spacing:6px;font-size:.75rem;opacity:.65;margin-bottom:18px}.hero h1{font-size:clamp(3.2rem,11vw,8rem);line-height:.9;letter-spacing:-5px;text-transform:uppercase;text-shadow:0 12px 40px #000}
+.hero h1 span{display:block;font-size:.32em;letter-spacing:8px;margin:25px 0 5px;color:#bbb}.hero p{font-size:1.1rem;opacity:.8;margin:28px auto;max-width:600px;line-height:1.7}
+.btn{display:inline-block;padding:14px 24px;border:1px solid rgba(255,255,255,.45);border-radius:999px;color:#fff;text-decoration:none;background:rgba(255,255,255,.08);backdrop-filter:blur(10px);transition:.25s}.btn:hover{transform:translateY(-3px);background:rgba(255,255,255,.16)}
+.card{max-width:850px;padding:38px;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.48);backdrop-filter:blur(16px);border-radius:28px;box-shadow:0 25px 80px rgba(0,0,0,.45)}
+h2{font-size:clamp(2rem,6vw,4rem);margin-bottom:18px}.card p{line-height:1.8;color:#ddd}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;width:100%;max-width:1000px}.tile{padding:28px;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);min-height:160px;transition:.3s}.tile:hover{transform:translateY(-8px);background:rgba(255,255,255,.11)}.tile h3{margin-bottom:10px}.tile p{color:#bbb;line-height:1.6}
+footer{text-align:center;padding:30px;opacity:.5}
+.modal{display:none;position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.75);align-items:center;justify-content:center;padding:20px}.modal.show{display:flex}.modal-box{width:min(420px,100%);padding:32px;border-radius:25px;background:#111;border:1px solid #333;text-align:center}.modal-box h2{font-size:2rem}.modal-box a{display:block;margin:12px 0}.close{position:absolute;top:22px;right:28px;font-size:30px;cursor:pointer}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}.bounce{animation:bounce 2.8s ease-in-out infinite}
+@media(max-width:700px){nav{padding:17px 5%}nav a{margin-left:10px;font-size:.75rem}.grid{grid-template-columns:1fr}section{padding:110px 6%}.hero h1{letter-spacing:-2px}.card{padding:25px}}
+</style>
+</head>
+<body>
+<nav><div class="logo">BIGEX<span> // BATMAN</span></div><div><a href="#about">About</a><a href="#hobbies">Hobbies</a><a href="#" onclick="openContact();return false">Contact</a></div></nav>
+
+<section class="hero">
+<div class="hero-inner bounce"><div class="eyebrow">THE MAN BEHIND THE MASK</div><h1><span>I'M</span>BATMAN</h1><p>Just don't tell them. A software engineering student, builder, learner and professional problem-solver.</p><a class="btn" href="#about">Enter the Batcave ↓</a></div>
+</section>
+
+<section id="about"><div class="card"><div class="eyebrow">CIVILIAN IDENTITY</div><h2>Every Batman needs a civilian identity.</h2><p>I build things, learn constantly, enjoy good music and movies, and care about the people around me. This portfolio is a small window into the person behind the mask.</p></div></section>
+
+<section id="hobbies"><div style="width:100%"><div class="eyebrow">AFTER HOURS</div><h2>Hobbies</h2><div class="grid">
+<div class="tile"><h3>💻 Building</h3><p>Turning ideas into websites, apps and experiments.</p></div>
+<div class="tile"><h3>🎵 Music</h3><p>Late-night sounds, smooth vibes and everything in between.</p></div>
+<div class="tile"><h3>🤝 People</h3><p>Good conversations, friendships and shared experiences.</p></div>
+<div class="tile"><h3>🧠 Learning</h3><p>Always picking up something new and improving.</p></div>
+<div class="tile"><h3>🎬 Movies</h3><p>Stories, action, comedy, romance and unforgettable characters.</p></div>
+<div class="tile"><h3>🦇 Batman</h3><p>Obviously. The branding department insisted.</p></div>
+</div></div></section>
+
+<section><div class="card" style="text-align:center;margin:auto"><div class="eyebrow">THE BAT-SIGNAL</div><h2>Don't just stare at it.</h2><p>Want to talk, collaborate or just say what's up?</p><br><button class="btn" onclick="openContact()">Contact Me</button></div></section>
+<footer>© 2026 Bigex. Built in the Batcave.</footer>
+
+<div class="modal" id="modal" onclick="outside(event)"><div class="close" onclick="closeContact()">×</div><div class="modal-box"><h2>Contact</h2><p style="color:#aaa;margin-bottom:20px">Choose your transmission method.</p><a class="btn" href="mailto:igetobiloluwa36@gmail.com">📧 Email</a><a class="btn" href="tel:07064433499">📞 Call</a><a class="btn" href="https://github.com/bigexman-36" target="_blank">💻 GitHub</a></div></div>
+<script>
+function openContact(){document.getElementById('modal').classList.add('show')}
+function closeContact(){document.getElementById('modal').classList.remove('show')}
+function outside(e){if(e.target.id==='modal')closeContact()}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeContact()})
+</script>
+</body></html>
